@@ -42,15 +42,6 @@ ul {
     list-style: none;
 }
 
-a {
-    color: var(--text-dark);
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 140%;
-    text-decoration: none;
-}
-
 .container {
     max-width: 1440px;
     width: 100vw;
@@ -94,7 +85,6 @@ a {
 }
 
 .header-nav {
-    display: flex;
     margin-top: -8px;
 }
 
@@ -119,6 +109,36 @@ a {
     gap: 9px;
 }
 
+
+a.menu-link {
+    position: relative;
+    color: var(--text-dark);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 200%;
+    text-decoration: none;
+
+    &:after {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: var(--text-dark);
+        content: "";
+        transition: width 0.3s ease-out;
+    }
+
+    &:focus:after,
+    &:hover:after {
+        width: 100%;
+    }
+}
+
 .menu-cup {
-    margin-top: -1px;
+    margin-top: 4px;
 }
