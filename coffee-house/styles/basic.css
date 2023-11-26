@@ -94,7 +94,7 @@ a {
 
 .header-nav {
     display: flex;
-    margin-top: -6px;
+    margin-top: -8px;
 }
 
 .menu-list {
@@ -108,13 +108,16 @@ a {
 
 .coffee-menu {
     min-width: 72px;
-    display: flex;
-    margin-top: -6px;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 9px;
+    margin-top: -9px;
+}
 
-    .coffee-cup {
-        margin-top: -6px;
-    }
+.menu-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.menu-cup {
+    margin-top: -1px;
 }
