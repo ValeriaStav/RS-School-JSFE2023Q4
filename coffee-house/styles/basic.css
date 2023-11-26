@@ -71,21 +71,25 @@ ul {
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: -2px;
+    margin-bottom: 2px;
     padding: 0px 40px;
     justify-content: center;
     align-self: stretch;
 }
 
+.logo {
+    height: 60px;
+    margin-top: 4px;
+}
+
 .header-menu {
     max-width: 1360px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
-}
-
-.header-nav {
-    margin-top: -8px;
 }
 
 .menu-list {
@@ -99,7 +103,6 @@ ul {
 
 .coffee-menu {
     min-width: 72px;
-    margin-top: -9px;
 }
 
 .menu-link {
@@ -141,4 +144,105 @@ a.menu-link {
 
 .menu-cup {
     margin-top: 4px;
+}
+
+/* ======= Enjoy ======= */
+
+.enjoy {
+    display: flex;
+    max-width: 1360px;
+    width: 100%;
+    height: 644px;
+    margin: 0 auto;
+    padding: 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 40px;
+    background: url("../assets/images/enjoy.png") lightgray no-repeat center;
+    background-size: cover;
+}
+
+.offer {
+    display: flex;
+    width: 530px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+h1 {
+    margin: 0;
+    color: var(--text-light);
+    font-family: Inter;
+    font-size: 72px;
+    line-height: 105%;
+
+    & i {
+        color: var(--text-accent);
+    }
+}
+
+p {
+    margin: 0;
+    color: var(--text-light);
+    font-family: Inter;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.menu-btn {
+    display: flex;
+    width: 200px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    background: var(--background-body, #E1D4C9);
+    color: var(--text-dark, #403F3D);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+
+
+
+    &:focus,
+    &:hover {
+        .menu-default {
+            display: none;
+        }
+
+        .menu-hover {
+            display: block;
+            animation: fade_in_show 0.5s;
+
+            >img {
+                margin-bottom: -3px;
+            }
+        }
+    }
+}
+
+.menu-hover {
+    display: none;
+}
+
+@keyframes fade_in_show {
+    0% {
+        opacity: 0;
+        transform: scaleX(1)
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
