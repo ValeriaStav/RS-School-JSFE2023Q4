@@ -397,3 +397,92 @@ p {
         }
     }
 }
+
+
+/* ======= About ======= */
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+}
+
+.about-container {
+    margin: 0 auto;
+    display: flex;
+    max-width: 1360px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+}
+
+.about-text {
+    color: var(--text-dark);
+    font-family: Inter;
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    line-height: 125%;
+
+    >i {
+        color: var(--text-accent);
+    }
+}
+
+.about-images {
+    display: flex;
+    max-width: 1360px;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.about-img {
+    transform: scale(1);
+    transition: all 0.3s ease-in;
+
+    &:hover {
+        transform: scale(0.9);
+    }
+}
+
+.about-1,
+.about-4 {
+    max-width: 660px;
+    width: 100%;
+    height: 590px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    >img {
+        position: relative;
+        bottom: 68px;
+        right: 33px;
+    }
+}
+
+.about-2,
+.about-3 {
+    max-width: 660px;
+    width: 100%;
+    height: 430px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-position: bottom center;
+
+    >img {
+        position: relative;
+        bottom: 148px;
+        right: 33px;
+    }
+}
