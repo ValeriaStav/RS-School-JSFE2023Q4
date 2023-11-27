@@ -174,7 +174,7 @@ a.menu-link {
     gap: 40px;
 }
 
-h1 {
+.offer-title {
     margin: 0;
     color: var(--text-light);
     font-family: Inter;
@@ -187,8 +187,7 @@ h1 {
     }
 }
 
-p {
-    margin: 0;
+.offer-text {
     color: var(--text-light);
     font-family: Inter;
     font-size: 16px;
@@ -484,5 +483,96 @@ p {
         position: relative;
         bottom: 148px;
         right: 33px;
+    }
+}
+
+
+/* ======= Mobile App ======= */
+
+.mobile-container {
+    display: flex;
+    max-width: 1360px;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin: 0 auto;
+}
+
+.mobile-offer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: -4px;
+}
+
+.mobile-title {
+    color: var(--text-dark);
+    font-family: Inter;
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    line-height: 125%;
+
+    >i {
+        color: var(--text-accent);
+    }
+}
+
+.mobile-text {
+    color: var(--text-dark);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.mobile-btns {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    >a {
+        display: flex;
+        width: 200px;
+        padding: 12px 19px;
+        align-items: center;
+        gap: 8px;
+        border-radius: 100px;
+        border: 1px solid var(--border-dark);
+        background-color: transparent;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+
+        &:hover {
+            background: var(--background-container);
+
+            >svg>path {
+                fill: var(--text-light);
+            }
+
+            .text,
+            .title {
+                color: var(--text-light);
+            }
+        }
+    }
+
+    .text {
+        color: var(--text-dark);
+        text-align: start;
+        font-family: Inter;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 140%;
+    }
+
+    .title {
+        color: var(--text-dark);
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 150%;
     }
 }
