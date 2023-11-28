@@ -95,6 +95,10 @@ h1 {
     &:hover {
         background: var(--background-container);
 
+        .tab-icon {
+            background: var(--background-body);
+        }
+
         .tab-text {
             color: var(--text-light);
         }
@@ -118,7 +122,7 @@ h1 {
 }
 
 .tab-icon.active {
-    background: var(--border-light);
+    background: var(--background-body);
 }
 
 .tab-text {
