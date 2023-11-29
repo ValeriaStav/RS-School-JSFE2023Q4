@@ -200,9 +200,9 @@ a.menu-link {
 .menu-btn {
     display: flex;
     width: 200px;
-    padding: 20px;
+    padding: 19px 20px 20px;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 8px;
     border-radius: 100px;
     background: var(--background-body, #E1D4C9);
@@ -217,37 +217,28 @@ a.menu-link {
     cursor: pointer;
     transition: all 0.5s ease-out;
 
+    .menu-text {
+        margin-left: 28px;
+        transition: all 0.5s ease-out;
+
+    }
+
+    .menu-btn-cup {
+        opacity: 0;
+        transition: all 0.5s ease-out;
+    }
+
 
 
     &:focus,
     &:hover {
-        .menu-default {
-            display: none;
+        .menu-text {
+            margin-left: 0;
         }
 
-        .menu-hover {
-            display: block;
-            animation: fade_in_show 0.5s;
-
-            >img {
-                margin-bottom: -3px;
-            }
+        .menu-btn-cup {
+            opacity: 1;
         }
-    }
-}
-
-.menu-hover {
-    display: none;
-}
-
-@keyframes fade_in_show {
-    0% {
-        opacity: 0;
-        transform: scaleX(1)
-    }
-
-    100% {
-        opacity: 1;
     }
 }
 
