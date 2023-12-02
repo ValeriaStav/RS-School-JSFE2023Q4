@@ -610,6 +610,7 @@ a.menu-link {
     display: flex;
     align-items: flex-start;
     gap: 20px;
+    margin-top: -4px;
 
     >a {
         display: flex;
@@ -667,9 +668,22 @@ a.menu-link {
     justify-content: center;
     align-items: center;
     gap: 100px;
-    align-self: stretch;
     border-radius: 40px;
     background: var(--background-container);
+}
+
+@media (max-width: 1024px) {
+
+    .contacts-container {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: -5px auto 0px;
+        padding: 100px 60px;
+    }
+
+    .mobile-offer {
+        margin-top: 0;
+    }
 }
 
 .contacts-offer {
