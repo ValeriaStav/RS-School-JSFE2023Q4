@@ -1,0 +1,96 @@
+/* ======= Header ======= */
+
+
+@media (max-width:768px) {
+
+    .header-nav,
+    .coffee-menu {
+        display: none;
+    }
+}
+
+/* ======= Enjoy ======= */
+
+
+@media (max-width:768px) {
+    .enjoy {
+        width: calc(100vw - 80px);
+        padding: 100px 60px;
+    }
+
+    .favorite-coffee {
+        padding: 0px 40px;
+    }
+
+    .menu-btn {
+
+        .menu-text {
+            margin-left: 0;
+        }
+
+        .menu-btn-cup {
+            vertical-align: text-top;
+            opacity: 1;
+        }
+    }
+}
+
+
+/* ======= About ======= */
+
+@media (max-width:768px) {
+    .about-container {
+        width: calc(100vw - 80px);
+    }
+}
+
+@media (max-width: 1280px) {
+    .about-images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .about-1,
+    .about-4 {
+        max-width: 688px;
+        width: 100vw;
+
+        >img {
+            bottom: 68px;
+            right: 19px;
+        }
+    }
+
+    .about-2,
+    .about-3 {
+        display: none;
+    }
+}
+
+/* ======= Mobile App ======= */
+
+
+@media (max-width: 1280px) {
+
+    .mobile-container {
+        flex-direction: column;
+    }
+}
+
+/* ======= Contact Us ======= */
+
+@media (max-width: 1024px) {
+
+    .contacts-container {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: -5px auto 0px;
+        padding: 100px 60px;
+    }
+
+    .mobile-offer {
+        margin-top: 0;
+    }
+}
