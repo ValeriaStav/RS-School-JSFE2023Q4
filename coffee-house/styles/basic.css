@@ -176,7 +176,7 @@ a.menu-link {
     background-repeat: no-repeat;
 }
 
-@media (min-width: 380px) and (max-width:768px) {
+@media (max-width:768px) {
     .enjoy {
         width: calc(100vw - 80px);
         padding: 100px 60px;
@@ -281,6 +281,12 @@ a.menu-link {
     gap: 40px;
 }
 
+@media (max-width:768px) {
+    .favorite-coffee {
+        padding: 0px 40px;
+    }
+}
+
 .favorite-text {
     color: var(--text-dark);
     text-align: center;
@@ -303,6 +309,13 @@ a.menu-link {
     align-items: center;
     gap: 40px;
 }
+
+@media (max-width:768px) {
+    .favorite-slider {
+        width: calc(100vw - 80px);
+    }
+}
+
 
 .slider-bar {
     display: flex;
