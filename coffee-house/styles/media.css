@@ -152,6 +152,34 @@
     }
 }
 
+@media (max-width:380px) {
+    .mobile-container {
+        gap: 40px;
+    }
+
+    .mobile-offer {
+        width: calc(100vw - 32px);
+    }
+
+    .mobile-title {
+        font-size: 32px;
+        line-height: 125%
+    }
+
+    .mobile-btns {
+        flex-direction: column;
+    }
+
+    .mobile-img {
+        margin-top: -5px;
+    }
+
+    .mobile-screens {
+        width: 348px;
+        height: 348px;
+    }
+}
+
 /* ======= Contact Us ======= */
 
 @media (max-width: 1024px) {
