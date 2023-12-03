@@ -9,6 +9,12 @@
     }
 }
 
+@media (max-width:380px) {
+    .header-container {
+        padding: 0px 16px;
+    }
+}
+
 /* ======= Enjoy ======= */
 
 
@@ -34,6 +40,52 @@
         }
     }
 }
+
+@media (max-width:380px) {
+    .enjoy {
+        width: calc(100vw - 32px);
+        padding: 60px 16px;
+    }
+
+    .offer-title {
+        font-size: 42px;
+        line-height: 115%
+    }
+}
+
+
+/* ======= Favorites Coffee ======= */
+
+
+@media (max-width:380px) {
+    .favorite-coffee {
+        padding: 0;
+    }
+
+    .favorite-container {
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .favorite-text {
+        font-size: 32px;
+        line-height: 125%
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .slider-item {
+        max-width: 348px;
+    }
+
+    .slider-img {
+        width: 348px;
+        height: 348px;
+    }
+}
+
 
 
 /* ======= About ======= */
@@ -66,6 +118,27 @@
     .about-2,
     .about-3 {
         display: none;
+    }
+}
+
+@media (max-width:380px) {
+
+    .about-container {
+        width: calc(100vw - 32px);
+    }
+
+    .about-text {
+        font-size: 32px;
+        line-height: 125%;
+    }
+
+    .about-1,
+    .about-4 {
+        width: calc(100vw - 32px);
+
+        >img {
+            right: 189px;
+        }
     }
 }
 
