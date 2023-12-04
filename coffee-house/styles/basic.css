@@ -317,7 +317,6 @@ a.menu-link {
     max-width: 1152px;
     justify-content: flex-end;
     align-items: flex-start;
-    /* flex: 1 0 0; */
 }
 
 .slide {
@@ -590,42 +589,44 @@ a.menu-link {
     align-items: flex-start;
     gap: 40px;
     flex: 1 0 0;
+}
 
-    .title {
-        color: var(--text-light);
-        font-family: Inter;
-        font-size: 60px;
-        font-weight: 600;
-        line-height: 125%;
+.contacts-title {
+    color: var(--text-light);
+    font-family: Inter;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
 
-        >i {
-            color: var(--text-accent);
-        }
+    >i {
+        color: var(--text-accent);
     }
 
-    .socials {
+}
+
+.contacts-socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    >a {
         display: flex;
+        width: 60px;
+        height: 60px;
+        justify-content: center;
         align-items: center;
-        gap: 12px;
+        border-radius: 100px;
+        border: 1px solid var(--border-light);
+        transition: background-color 0.3s ease-out, opacity 0.3s ease-out;
 
-        >a {
-            display: flex;
-            width: 60px;
-            height: 60px;
-            justify-content: center;
-            align-items: center;
-            border-radius: 100px;
-            border: 1px solid var(--border-light);
-            transition: background-color 0.3s ease-out, opacity 0.3s ease-out;
+        &:hover {
+            background: var(--background-body);
 
-            &:hover {
-                background: var(--background-body);
-
-                >svg>path {
-                    stroke: var(--text-dark);
-                }
+            >svg>path {
+                stroke: var(--text-dark);
             }
         }
+
     }
 }
 
