@@ -213,3 +213,18 @@
         }
     }
 }
+
+/* ============== MENU ============== */
+
+/* ======= Main ======= */
+
+
+@media (max-width: 1024px) {
+
+    .menu-grid {
+
+        .items-2 {
+            display: none;
+        }
+    }
+}
