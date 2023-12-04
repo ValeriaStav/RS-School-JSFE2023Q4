@@ -292,7 +292,7 @@ a.menu-link {
 
 .slider-bar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 40px;
     align-self: stretch;
@@ -357,7 +357,7 @@ a.menu-link {
     gap: 16px;
     align-self: stretch;
 
-    .title {
+    .description-title {
         color: var(--text-dark);
         text-align: center;
         font-family: Inter;
@@ -366,7 +366,7 @@ a.menu-link {
         line-height: 125%;
     }
 
-    .text {
+    .description-text {
         color: var(--text-dark);
         text-align: center;
         font-family: Inter;
