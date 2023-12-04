@@ -226,5 +226,35 @@
         .items-2 {
             display: none;
         }
+
+    }
+
+    .menu-container {
+
+        .menu-btn-refresh {
+            margin: 0 auto;
+            display: flex;
+            width: 60px;
+            height: 60px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100px;
+            border: 1px solid var(--border-dark);
+            cursor: pointer;
+            transition: all 0.3s;
+
+            .refresh-svg {
+                stroke: var(--text-dark);
+            }
+
+            &:hover {
+                background: var(--background-container);
+
+                .refresh-svg {
+                    stroke: var(--text-light);
+                }
+            }
+        }
+
     }
 }
