@@ -302,11 +302,13 @@
                 stroke: var(--text-dark);
             }
 
-            &:hover {
-                background: var(--background-container);
+            @media (hover:hover) {
+                &:hover {
+                    background: var(--background-container);
 
-                .refresh-svg {
-                    stroke: var(--text-light);
+                    .refresh-svg {
+                        stroke: var(--text-light);
+                    }
                 }
             }
         }

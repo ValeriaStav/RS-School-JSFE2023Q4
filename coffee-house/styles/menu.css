@@ -92,16 +92,17 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s ease-out, opacity 0.3s ease-out;
 
+    @media (hover:hover) {
+        &:hover {
+            background: var(--background-container);
 
-    &:hover {
-        background: var(--background-container);
+            .tab-icon {
+                background: var(--background-body);
+            }
 
-        .tab-icon {
-            background: var(--background-body);
-        }
-
-        .tab-text {
-            color: var(--text-light);
+            .tab-text {
+                color: var(--text-light);
+            }
         }
     }
 }
@@ -164,10 +165,11 @@ h1 {
     overflow: hidden;
     cursor: pointer;
 
-    &:hover img {
-        transform: scale(0.91);
+    @media (hover:hover) {
+        &:hover img {
+            transform: scale(0.91);
+        }
     }
-
 }
 
 .item-img {

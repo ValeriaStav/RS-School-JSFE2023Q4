@@ -139,14 +139,25 @@ a.menu-link {
         transition: width 0.3s ease-out;
     }
 
-    &:focus:after,
-    &:hover:after {
-        width: 100%;
+    @media (hover:hover) {
+
+        &:focus:after,
+        &:hover:after {
+            width: 100%;
+        }
     }
 }
 
 .menu-cup {
     margin-top: 4px;
+}
+
+
+/* ======= Header Burger ======= */
+
+
+.header-burger {
+    display: none;
 }
 
 
@@ -228,15 +239,17 @@ a.menu-link {
     }
 
 
+    @media (hover:hover) {
 
-    &:focus,
-    &:hover {
-        .menu-text {
-            margin-left: 0;
-        }
+        &:focus,
+        &:hover {
+            .menu-text {
+                margin-left: 0;
+            }
 
-        .menu-btn-cup {
-            opacity: 1;
+            .menu-btn-cup {
+                opacity: 1;
+            }
         }
     }
 }
@@ -302,11 +315,13 @@ a.menu-link {
         stroke: var(--text-dark);
     }
 
-    &:hover {
-        background: var(--background-container);
+    @media (hover:hover) {
+        &:hover {
+            background: var(--background-container);
 
-        .arrow-svg {
-            stroke: var(--text-light);
+            .arrow-svg {
+                stroke: var(--text-light);
+            }
         }
     }
 }
@@ -437,8 +452,11 @@ a.menu-link {
     transform: scale(1);
     transition: all 0.3s ease-in;
 
-    &:hover {
-        transform: scale(0.91);
+    @media (hover:hover) {
+
+        &:hover {
+            transform: scale(0.91);
+        }
     }
 }
 
@@ -534,16 +552,18 @@ a.menu-link {
         cursor: pointer;
         transition: background 0.3s ease-in-out;
 
-        &:hover {
-            background: var(--background-container);
+        @media (hover:hover) {
+            &:hover {
+                background: var(--background-container);
 
-            >svg>path {
-                fill: var(--text-light);
-            }
+                >svg>path {
+                    fill: var(--text-light);
+                }
 
-            .text,
-            .title {
-                color: var(--text-light);
+                .text,
+                .title {
+                    color: var(--text-light);
+                }
             }
         }
     }
@@ -619,11 +639,13 @@ a.menu-link {
         border: 1px solid var(--border-light);
         transition: background-color 0.3s ease-out, opacity 0.3s ease-out;
 
-        &:hover {
-            background: var(--background-body);
+        @media (hover:hover) {
+            &:hover {
+                background: var(--background-body);
 
-            >svg>path {
-                stroke: var(--text-dark);
+                >svg>path {
+                    stroke: var(--text-dark);
+                }
             }
         }
 
@@ -670,9 +692,12 @@ a.menu-link {
             transition: width 0.3s ease-out;
         }
 
-        &:focus:after,
-        &:hover:after {
-            width: 100%;
+        @media (hover:hover) {
+
+            &:focus:after,
+            &:hover:after {
+                width: 100%;
+            }
         }
     }
 
