@@ -2,6 +2,9 @@
 
 
 @media (max-width:768px) {
+    .header-menu {
+        margin-top: -2px;
+    }
 
     .header-nav,
     .coffee-menu {
@@ -21,7 +24,6 @@
 @media (max-width:768px) {
 
     .header-burger {
-        margin-top: 1px;
         display: flex;
         width: 44px;
         height: 44px;
@@ -77,15 +79,10 @@
 @media (max-width:768px) {
     .enjoy {
         width: calc(100vw - 80px);
-        padding: 100px 60px;
-    }
-
-    .favorite-coffee {
-        padding: 0px 40px;
+        padding: 101px 60px;
     }
 
     .menu-btn {
-
         .menu-text {
             margin-left: 0;
         }
@@ -112,10 +109,18 @@
 
 /* ======= Favorites Coffee ======= */
 
-@media (min-width: 320px) and (max-width: 768px) {
+@media (min-width: 320px) and (max-width: 760px) {
+
+    .favorite-text {
+        margin-top: 1px;
+    }
 
     .slider-bar {
         justify-content: center;
+    }
+
+    .slider-img {
+        width: 100%;
     }
 
     .arrow {
@@ -129,9 +134,10 @@
         padding: 0;
     }
 
-    .favorite-container {
-        margin: 0 auto;
-        padding: 0;
+    .favorite-text,
+    .description {
+        width: calc(100vw - 32px);
+
     }
 
     .favorite-text {
@@ -139,13 +145,9 @@
         line-height: 125%
     }
 
-    .slider-item {
-        max-width: 348px;
-    }
-
     .slider-img {
-        width: 348px;
-        height: 348px;
+        min-width: 348px;
+        height: 100%;
     }
 }
 
@@ -177,9 +179,35 @@
     }
 }
 
-@media (max-width:768px) {
-    .about-container {
-        width: calc(100vw - 80px);
+@media (max-width:650px) {
+
+    .about-1 img,
+    .about-4 img {
+        right: 50px;
+    }
+}
+
+@media (max-width:550px) {
+
+    .about-1 img,
+    .about-4 img {
+        right: 100px;
+    }
+}
+
+@media (max-width:500px) {
+
+    .about-1 img,
+    .about-4 img {
+        right: 150px;
+    }
+}
+
+@media (max-width:450px) {
+
+    .about-1 img,
+    .about-4 img {
+        right: 200px;
     }
 }
 
@@ -199,8 +227,24 @@
         width: calc(100vw - 32px);
 
         >img {
-            right: 189px;
+            right: 54.4%;
         }
+    }
+
+    .about-1 {
+        margin-top: -1px;
+    }
+
+    .about-4 {
+        margin-top: 0;
+    }
+}
+
+@media (max-width:320px) {
+
+    .about-1 img,
+    .about-4 img {
+        right: 250px;
     }
 }
 
@@ -216,12 +260,9 @@
 
 @media (max-width: 767px) {
     .mobile-container {
+        width: calc(100vw - 32px);
         gap: 40px;
     }
-
-    /* .mobile-offer {
-        width: calc(100vw - 32px);
-    } */
 
     .mobile-title {
         font-size: 32px;
@@ -232,13 +273,10 @@
         flex-direction: column;
     }
 
-    .mobile-img {
-        margin-top: -5px;
-    }
-
-    .mobile-screens {
-        max-width: 348px;
-        max-height: 348px;
+    .mobile-img img {
+        width: 100%;
+        height: 100%;
+        margin-top: -4px;
     }
 }
 
@@ -272,6 +310,12 @@
         font-size: 32px;
         letter-spacing: -0.1px;
         line-height: 125%;
+    }
+
+    .button-google-play {
+        .btn-text {
+            margin-top: -3px;
+        }
     }
 
 }
@@ -350,12 +394,16 @@
 
 @media (min-width: 380px) and (max-width: 768px) {
 
+    .enjoy,
     .about-container,
+    .about-1,
+    .about-4,
     .mobile-container,
     .contacts-container {
         width: calc(100vw - calc(32px + (80 - 32) * ((100vw - 380px) / (768 - 380))));
     }
 
+    .enjoy,
     .contacts-container {
         padding: calc(60px + (100 - 60) * ((100vw - 380px) / (768 - 380))) calc(16px + (60 - 16) * ((100vw - 380px) / (768 - 380)));
     }
@@ -372,18 +420,11 @@
         font-size: calc(32px + (60 - 32) * ((100vw - 380px) / (768 - 380)));
     }
 
-    .about-1,
-    .about-4 {
-        width: calc(100vw - calc(32px + (80 - 32) * ((100vw - 32) / (80 - 32))));
 
-        .mobile-screens {
-            width: calc(100vw - calc(348px + (630 - 348) * ((100vw - 348) / (630 - 348))));
-        }
-    }
-
-    @media (min-width: 320px) and (max-width: 379px) {
+    @media (max-width: 379px) {
 
         .about-container,
+        .description,
         .mobile-container,
         .contacts-container {
             width: calc(100vw - calc(32px * ((100vw - 320px) / (379 - 320))));
@@ -404,3 +445,4 @@
             font-size: calc(32px * ((100vw - 320px) / (379 - 320)));
         }
     }
+}
