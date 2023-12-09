@@ -21,6 +21,7 @@ h1 {
     flex-direction: column;
     gap: 20px;
     overflow-x: clip;
+    position: relative;
 }
 
 .menu-container {

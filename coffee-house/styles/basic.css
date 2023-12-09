@@ -58,6 +58,7 @@ ul {
     flex-direction: column;
     gap: 100px;
     overflow-x: clip;
+    position: relative;
 }
 
 ::-webkit-scrollbar {
@@ -102,6 +103,10 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.header-nav {
+    margin: 0 auto;
 }
 
 .menu-list {
@@ -162,8 +167,14 @@ a.menu-link {
 
 /* ======= Header Burger ======= */
 
+.burger-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
-.header-burger {
+.header-burger-open,
+.header-burger-close {
     display: none;
 }
 
