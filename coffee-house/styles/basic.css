@@ -173,8 +173,7 @@ a.menu-link {
     justify-content: space-between;
 }
 
-.header-burger-open,
-.header-burger-close {
+.header-burger {
     display: none;
 }
 

@@ -33,6 +33,13 @@
         right: -768px;
         background-color: var(--background-body);
         opacity: 0;
+        transition: transform .5s, opacity .5s;
+        z-index: 2;
+    }
+
+    .header.open .burger-container {
+        transform: translateX(-100%);
+        opacity: 1;
     }
 
     .menu-list {
@@ -49,60 +56,59 @@
 
     }
 
+    .coffee-menu {
+        border-bottom: none;
+    }
+
     .menu-cup {
         width: 40px;
         margin: 0;
     }
 
 
-    .header-burger-open {
+    .header-burger {
         display: flex;
         width: 44px;
         height: 44px;
+        margin-top: 3px;
         justify-content: center;
         align-items: center;
         border-radius: 100px;
         border: 1px solid var(--border-dark);
         cursor: pointer;
         transition: all 0.3s;
-
-        .burger-line {
-            stroke: var(--text-dark);
-        }
-
-    }
-
-    @media (hover:hover) {
-        .header-burger:hover {
-            background: var(--background-container);
-
-            .burger-line {
-                stroke: var(--text-light);
-            }
-        }
-    }
-
-    .burger-lines {
-        margin-top: 5px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        position: relative;
     }
 
     .burger-line {
-        width: 16px;
+        display: block;
         position: absolute;
-        stroke-width: 1.5px;
-        stroke: var(--text-dark);
+        width: 18px;
+        height: 2px;
+        background-color: var(--text-dark);
+        transition: transform .5s;
+        will-change: transform;
+        ;
+    }
 
-        &:last-child {
-            bottom: 0px;
-        }
+    .burger-line:first-child {
+        transform: translateY(-4px);
+    }
+
+    .burger-line:last-child {
+        transform: translateY(4px);
+    }
+
+
+    .header.open .burger-line:first-child {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    .header.open .burger-line:last-child {
+        transform: translateY(0)rotate(-45deg);
+
     }
 }
+
 
 
 /* ======= Enjoy ======= */
