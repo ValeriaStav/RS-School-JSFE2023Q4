@@ -1,5 +1,11 @@
 @import './basic.css';
 
+@media (max-width:768px) {
+    .container {
+        padding-top: 20px;
+    }
+}
+
 /* ======= Header ======= */
 
 @media (max-width:768px) {
@@ -50,6 +56,7 @@
     }
 
     a.menu-link {
+        display: inline;
         justify-content: center;
         gap: 16px;
         font-size: 32px;
@@ -59,6 +66,7 @@
     }
 
     .coffee-menu {
+        margin: 0 auto;
         border-bottom: none;
     }
 
@@ -118,6 +126,9 @@
 @media (max-width:768px) {
     .enjoy {
         width: calc(100vw - 80px);
+    }
+
+    .offer {
         padding: 101px 60px;
     }
 
@@ -136,6 +147,9 @@
 @media (max-width:380px) {
     .enjoy {
         width: calc(100vw - 32px);
+    }
+
+    .offer {
         padding: 60px 16px;
     }
 
@@ -148,10 +162,16 @@
 
 /* ======= Favorites Coffee ======= */
 
+@media (max-width: 768px) {
+    .favorite-container {
+        margin-top: 2px;
+    }
+}
+
 @media (min-width: 320px) and (max-width: 760px) {
 
     .favorite-text {
-        margin-top: 1px;
+        margin-top: -2px;
     }
 
     .slider-bar {
@@ -257,6 +277,7 @@
     }
 
     .about-text {
+        margin-top: 1px;
         font-size: 32px;
         line-height: 125%;
     }
@@ -297,6 +318,12 @@
     }
 }
 
+@media (max-width: 768px) {
+    .mobile-img {
+        margin-top: -2px;
+    }
+}
+
 @media (max-width: 767px) {
     .mobile-container {
         width: calc(100vw - 32px);
@@ -312,10 +339,13 @@
         flex-direction: column;
     }
 
+    .mobile-img {
+        margin-top: -4px;
+    }
+
     .mobile-img img {
         width: 100%;
         height: 100%;
-        margin-top: -4px;
     }
 }
 
@@ -442,8 +472,8 @@
         width: calc(100vw - calc(32px + (80 - 32) * ((100vw - 380px) / (768 - 380))));
     }
 
-    .enjoy,
-    .contacts-container {
+    .contacts-container,
+    .offer {
         padding: calc(60px + (100 - 60) * ((100vw - 380px) / (768 - 380))) calc(16px + (60 - 16) * ((100vw - 380px) / (768 - 380)));
     }
 
@@ -469,7 +499,8 @@
             width: calc(100vw - calc(32px * ((100vw - 320px) / (379 - 320))));
         }
 
-        .contacts-container {
+        .contacts-container,
+        .offer {
             padding: calc(60px * ((100vw - 320px) / (379 - 320))) calc(16px * ((100vw - 320px) / (379 - 320)));
         }
 
