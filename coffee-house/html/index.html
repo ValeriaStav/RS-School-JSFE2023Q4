@@ -115,7 +115,7 @@
                     </p>
                     <div class="favorite-slider">
                         <div class="slider-bar">
-                            <button class="arrow arrow-left">
+                            <button class="arrow arrow-left" onclick="prev()">
                                 <svg
                                     class="arrow-svg"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -131,30 +131,39 @@
                                     />
                                 </svg>
                             </button>
-                            <div class="row-slider">
+                            <div class="row-slider" id="slider">
                                 <div class="slide slide-1">
                                     <div class="slider-item">
                                         <img
                                             class="slider-img"
+                                            id="slide-img"
                                             src="../assets/images/coffee-slider-1.png"
                                             alt="coffee-slider-1"
                                         />
                                         <div class="description">
-                                            <div class="description-title">
+                                            <div
+                                                class="description-title"
+                                                id="slide-title"
+                                            >
                                                 S’mores Frappuccino
                                             </div>
-                                            <div class="description-text">
+                                            <div
+                                                class="description-text"
+                                                id="slide-text"
+                                            >
                                                 This new drink takes an espresso
                                                 and mixes it with brown sugar
                                                 and cinnamon before being topped
                                                 with oat milk.
                                             </div>
-                                            <div class="price">$5.50</div>
+                                            <div class="price" id="slide-price">
+                                                $5.50
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <button class="arrow arrow-right">
+                            <button class="arrow arrow-right" onclick="next()">
                                 <svg
                                     class="arrow-svg"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -172,9 +181,9 @@
                             </button>
                         </div>
                         <div class="slider-controls">
-                            <div class="control"></div>
-                            <div class="control"></div>
-                            <div class="control"></div>
+                            <div class="control" id="slide-control"></div>
+                            <div class="control" id="slide-control"></div>
+                            <div class="control" id="slide-control"></div>
                         </div>
                     </div>
                 </div>
@@ -401,5 +410,6 @@
             </footer>
         </div>
         <script defer src="../js/burger.js"></script>
+        <script defer src="../js/slider.js"></script>
     </body>
 </html>
