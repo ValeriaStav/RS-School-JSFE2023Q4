@@ -37,6 +37,7 @@ body {
     animation-name: appearance;
     animation-duration: 0.3s;
     overscroll-behavior: none;
+    overflow: visible;
 }
 
 a {
