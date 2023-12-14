@@ -5,7 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
         .getElementById("burger-button")
         .addEventListener("click", function () {
             document.querySelector(".header").classList.toggle("open");
-            document.body.style.overflow = "hidden";
+
+            let body = document.getElementsByTagName("body")[0];
+
+            if (body.style.overflow === "hidden") {
+                body.style.overflow = "visible";
+            } else {
+                body.style.overflow = "hidden";
+            }
         });
 
     document
