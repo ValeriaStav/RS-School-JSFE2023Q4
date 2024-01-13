@@ -1,0 +1,40 @@
+:root {
+    --main-color: #5455AB;
+    --header-color: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    background: var(--main-color);
+}
+
+.header {
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-color);
+}
+
+.header__img {
+    background: var(--main-color);
+}
+
+.header__title {
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: var(--header-color);
+    color: var(--main-color);
+}
