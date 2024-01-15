@@ -77,6 +77,29 @@ for (let i = 65; i <= 90; i++) {
 
 quizPart.appendChild(virtualKeyboard);
 
+/* MODAL */
+
+const modal = document.createElement("div");
+modal.classList.add("modal");
+app.appendChild(modal);
+
+const modalContent = document.createElement("div");
+modalContent.classList.add("modal-content");
+modal.appendChild(modalContent);
+
+const modalTitle = document.createElement("h2");
+modalTitle.classList.add("modal-title");
+modalContent.appendChild(modalTitle);
+
+const modalWord = document.createElement("span");
+modalWord.classList.add("modal-word");
+modalContent.appendChild(modalWord);
+
+const playBtn = document.createElement("button");
+playBtn.classList.add("play-btn");
+playBtn.textContent = "Play again";
+modalContent.appendChild(playBtn);
+
 /* GET WORD FROM LIST */
 
 const wordList = [
