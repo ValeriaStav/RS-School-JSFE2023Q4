@@ -141,3 +141,59 @@ const getRandomWord = () => {
   document.querySelector(".hint").textContent = hint;
   startGame();
 };
+
+/* GAME FUNCTIONS */
+
+let hiddenWord, correctLetters, wrongGuesses;
+const maxGuesses = 6;
+
+const initGame = (button, clickedBtn) => {
+  if (hiddenWord.includes(clickedBtn)) {
+    [...hiddenWord].forEach((letter, i) => {
+      if (letter === clickedBtn) {
+        correctLetters.push(letter);
+        secretWord.querySelectorAll("li")[i].textContent = letter;
+        secretWord.querySelectorAll("li")[i].classList.add("guess");
+      }
+    });
+  } else {
+    wrongGuesses++;
+    hangmanImg.src = `./assets/images/hangman-${wrongGuesses}.svg`;
+  }
+
+  button.disabled = true;
+  guessesCounter.textContent = `${wrongGuesses} / ${maxGuesses}`;
+
+  if (correctLetters.length === hiddenWord.length) return gameOver(true);
+  if (wrongGuesses === maxGuesses) return gameOver(false);
+};
+
+const startGame = () => {
+  correctLetters = [];
+  wrongGuesses = 0;
+  hangmanImg.src = "./assets/images/hangman-0.svg";
+  guessesCounter.textContent = `${wrongGuesses} / ${maxGuesses}`;
+  secretWord.innerHTML = hiddenWord
+    .split("")
+    .map(() => `<li class="letter"></li>`)
+    .join("");
+  virtualKeyboard
+    .querySelectorAll("button")
+    .forEach((btn) => (btn.disabled = false));
+};
+
+const gameOver = (isWin) => {
+  modal.classList.add("modal-active");
+  modalTitle.textContent = isWin
+    ? "Congrats, you win!"
+    : "You lose, game over!";
+  modalText = "The hidden word: ";
+  modalWord.innerHTML = `${modalText} <b>${hiddenWord}</b>`;
+};
+
+getRandomWord();
+
+playBtn.addEventListener("click", () => {
+  getRandomWord();
+  modal.classList.remove("modal-active");
+});
