@@ -109,3 +109,12 @@ const wordList = [
     hint: "The name of the pointer to the current state in the branch.",
   },
 ];
+
+/* Get a random word */
+
+const getRandomWord = () => {
+  const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
+  hiddenWord = word;
+  document.querySelector(".hint").textContent = hint;
+  startGame();
+};
