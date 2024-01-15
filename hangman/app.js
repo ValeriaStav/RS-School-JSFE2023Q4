@@ -42,12 +42,7 @@ quizPart.appendChild(secretWord);
 
 const hintBox = document.createElement("div");
 hintBox.classList.add("hint-box");
-hintBox.textContent = "Hint: ";
 quizPart.appendChild(hintBox);
-
-const hint = document.createElement("span");
-hint.classList.add("hint");
-hintBox.appendChild(hint);
 
 const guessesBox = document.createElement("div");
 guessesBox.classList.add("guesses-box");
@@ -158,7 +153,7 @@ const wordList = [
 const getRandomWord = () => {
   const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
   hiddenWord = word;
-  document.querySelector(".hint").textContent = hint;
+  document.querySelector(".hint-box").textContent = hint;
   startGame();
 };
 
