@@ -112,24 +112,44 @@ const wordList = [
     hint: "Version control system.",
   },
   {
+    word: "RETURN",
+    hint: "JS operator terminates the current function and returns its value.",
+  },
+  {
     word: "CHECKOUT",
     hint: "Git command is used to switch between branches or move the pointer to another existing commit.",
+  },
+  {
+    word: "CONST",
+    hint: "Keyword is used in JavaScript to declare a variable.",
   },
   {
     word: "GITHUB",
     hint: "Web service for hosting projects and their collaborative development, based on Git.",
   },
   {
+    word: "WHILE",
+    hint: "Keyword can you use to define a loop in JavaScript.",
+  },
+  {
     word: "SHOW",
     hint: "Git command outputs the changes made by a specific commit.",
+  },
+  {
+    word: "ASIDE",
+    hint: "HTML semantic element for the sidebar.",
   },
   {
     word: "CLONE",
     hint: "Git command is used to create a copy of a remote repository.",
   },
   {
-    word: "HEAD",
+    word: "MARGIN",
     hint: "The name of the pointer to the current state in the branch.",
+  },
+  {
+    word: "HEAD",
+    hint: "CSS property creates extra space around an element.",
   },
 ];
 
