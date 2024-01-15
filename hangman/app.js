@@ -76,3 +76,36 @@ for (let i = 65; i <= 90; i++) {
 }
 
 quizPart.appendChild(virtualKeyboard);
+
+/* GET WORD FROM LIST */
+
+const wordList = [
+  {
+    word: "HANGMAN",
+    hint: "The game you are currently playing.",
+  },
+  {
+    word: "GIT",
+    hint: "Version control system.",
+  },
+  {
+    word: "CHECKOUT",
+    hint: "Git command is used to switch between branches or move the pointer to another existing commit.",
+  },
+  {
+    word: "GITHUB",
+    hint: "Web service for hosting projects and their collaborative development, based on Git.",
+  },
+  {
+    word: "SHOW",
+    hint: "Git command outputs the changes made by a specific commit.",
+  },
+  {
+    word: "CLONE",
+    hint: "Git command is used to create a copy of a remote repository.",
+  },
+  {
+    word: "HEAD",
+    hint: "The name of the pointer to the current state in the branch.",
+  },
+];
