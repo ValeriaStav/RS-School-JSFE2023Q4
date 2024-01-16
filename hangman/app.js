@@ -36,7 +36,7 @@ const quizPart = document.createElement("div");
 quizPart.classList.add("quiz-part");
 app.appendChild(quizPart);
 
-const secretWord = document.createElement("ul");
+const secretWord = document.createElement("div");
 secretWord.classList.add("secret-word");
 quizPart.appendChild(secretWord);
 
@@ -60,9 +60,10 @@ guessesBox.appendChild(guessesCounter);
 const virtualKeyboard = document.createElement("div");
 virtualKeyboard.classList.add("keyboard");
 
-for (let i = 65; i <= 90; i++) {
+for (let i = 97; i <= 122; i++) {
   const button = document.createElement("button");
   button.classList.add("key-btn");
+  button.id = String.fromCharCode(i);
   button.textContent = String.fromCharCode(i);
   virtualKeyboard.appendChild(button);
   button.addEventListener("click", (e) =>
@@ -71,6 +72,13 @@ for (let i = 65; i <= 90; i++) {
 }
 
 quizPart.appendChild(virtualKeyboard);
+
+document.addEventListener("keypress", (e) => {
+  const button = document.getElementById(`${e.key}`);
+  if (!button.disabled) {
+    initGame(button, e.key);
+  }
+});
 
 /* MODAL */
 
@@ -99,51 +107,51 @@ modalContent.appendChild(playBtn);
 
 const wordList = [
   {
-    word: "HANGMAN",
+    word: "hangman",
     hint: "The game you are currently playing.",
   },
   {
-    word: "GIT",
+    word: "git",
     hint: "Version control system.",
   },
   {
-    word: "RETURN",
+    word: "return",
     hint: "JS operator terminates the current function and returns its value.",
   },
   {
-    word: "CHECKOUT",
+    word: "checkout",
     hint: "Git command is used to switch between branches or move the pointer to another existing commit.",
   },
   {
-    word: "CONST",
+    word: "const",
     hint: "Keyword is used in JavaScript to declare a variable.",
   },
   {
-    word: "GITHUB",
+    word: "github",
     hint: "Web service for hosting projects and their collaborative development, based on Git.",
   },
   {
-    word: "WHILE",
+    word: "while",
     hint: "Keyword can you use to define a loop in JavaScript.",
   },
   {
-    word: "SHOW",
+    word: "show",
     hint: "Git command outputs the changes made by a specific commit.",
   },
   {
-    word: "ASIDE",
+    word: "aside",
     hint: "HTML semantic element for the sidebar.",
   },
   {
-    word: "CLONE",
+    word: "clone",
     hint: "Git command is used to create a copy of a remote repository.",
   },
   {
-    word: "MARGIN",
+    word: "head",
     hint: "The name of the pointer to the current state in the branch.",
   },
   {
-    word: "HEAD",
+    word: "margin",
     hint: "CSS property creates extra space around an element.",
   },
 ];
@@ -152,6 +160,7 @@ const wordList = [
 
 const getRandomWord = () => {
   const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
+  // console.log("Hidden Word: ", word.toUpperCase());
   hiddenWord = word;
   document.querySelector(".hint-box").textContent = hint;
   startGame();
@@ -159,42 +168,43 @@ const getRandomWord = () => {
 
 /* GAME FUNCTIONS */
 
-let hiddenWord, correctLetters, wrongGuesses;
-const maxGuesses = 6;
+let hiddenWord, guessLetters, errors;
 
 const initGame = (button, clickedBtn) => {
   if (hiddenWord.includes(clickedBtn)) {
     [...hiddenWord].forEach((letter, i) => {
       if (letter === clickedBtn) {
-        correctLetters.push(letter);
-        secretWord.querySelectorAll("li")[i].textContent = letter;
-        secretWord.querySelectorAll("li")[i].classList.add("guess");
+        guessLetters.push(letter);
+        secretWord.querySelectorAll(".letter")[i].textContent = letter;
+        secretWord.querySelectorAll(".letter")[i].classList.add("guess");
       }
     });
   } else {
-    wrongGuesses++;
-    hangmanImg.src = `./assets/images/hangman-${wrongGuesses}.svg`;
+    errors++;
+    hangmanImg.src = `./assets/images/hangman-${errors}.svg`;
   }
 
   button.disabled = true;
-  guessesCounter.textContent = `${wrongGuesses} / ${maxGuesses}`;
+  guessesCounter.textContent = `${errors} / ${maxErrors}`;
 
-  if (correctLetters.length === hiddenWord.length) return gameOver(true);
-  if (wrongGuesses === maxGuesses) return gameOver(false);
+  if (guessLetters.length === hiddenWord.length) return gameOver(true);
+  if (errors === maxErrors) return gameOver(false);
 };
 
+const maxErrors = 6;
+
 const startGame = () => {
-  correctLetters = [];
-  wrongGuesses = 0;
+  guessLetters = [];
+  errors = 0;
   hangmanImg.src = "./assets/images/hangman-0.svg";
-  guessesCounter.textContent = `${wrongGuesses} / ${maxGuesses}`;
+  guessesCounter.textContent = `${errors} / ${maxErrors}`;
   secretWord.innerHTML = hiddenWord
     .split("")
-    .map(() => `<li class="letter"></li>`)
+    .map(() => `<div class="letter"></div>`)
     .join("");
   virtualKeyboard
     .querySelectorAll("button")
-    .forEach((btn) => (btn.disabled = false));
+    .forEach((button) => (button.disabled = false));
 };
 
 const gameOver = (isWin) => {
@@ -203,7 +213,10 @@ const gameOver = (isWin) => {
     ? "Congrats, you win!"
     : "You lose, game over!";
   modalText = "The hidden word: ";
-  modalWord.innerHTML = `${modalText} <b>${hiddenWord}</b>`;
+  modalWord.innerHTML = `${modalText} <b>${hiddenWord.toUpperCase()}</b>`;
+  virtualKeyboard
+    .querySelectorAll("button")
+    .forEach((button) => (button.disabled = true));
 };
 
 getRandomWord();
@@ -212,3 +225,5 @@ playBtn.addEventListener("click", () => {
   getRandomWord();
   modal.classList.remove("modal-active");
 });
+
+alert("Please switch your keyboard to EN layout and use only letter keys!");
