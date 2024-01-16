@@ -160,7 +160,7 @@ const wordList = [
 
 const getRandomWord = () => {
   const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
-  // console.log("Hidden Word: ", word.toUpperCase());
+  console.log("Secret word is", word.toUpperCase());
   hiddenWord = word;
   document.querySelector(".hint-box").textContent = hint;
   startGame();
