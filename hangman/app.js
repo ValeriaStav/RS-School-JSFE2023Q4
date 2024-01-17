@@ -166,9 +166,14 @@ const getRandomWord = () => {
   startGame();
 };
 
-/* GAME FUNCTIONS */
+/* VARIABLES */
 
-let hiddenWord, guessLetters, errors;
+let hiddenWord;
+let guessLetters;
+let errors;
+let maxErrors = 6;
+
+/* GAME FUNCTIONS */
 
 const initGame = (button, clickedBtn) => {
   if (hiddenWord.includes(clickedBtn)) {
@@ -190,8 +195,6 @@ const initGame = (button, clickedBtn) => {
   if (guessLetters.length === hiddenWord.length) return gameOver(true);
   if (errors === maxErrors) return gameOver(false);
 };
-
-const maxErrors = 6;
 
 const startGame = () => {
   guessLetters = [];
@@ -224,6 +227,15 @@ getRandomWord();
 playBtn.addEventListener("click", () => {
   getRandomWord();
   modal.classList.remove("modal-active");
+});
+
+document.addEventListener("keydown", function (e) {
+  if (modal.classList.contains("modal-active")) {
+    if (e.key === "Enter" || e.key === " ") {
+      getRandomWord();
+      modal.classList.remove("modal-active");
+    }
+  }
 });
 
 alert("Please switch your keyboard to EN layout and use only letter keys!");
