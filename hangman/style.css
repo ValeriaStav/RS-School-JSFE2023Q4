@@ -94,6 +94,9 @@ body {
   width: 30px;
   border-bottom: 2px solid black;
   text-transform: uppercase;
+  font-family: "Handlee", cursive;
+  font-style: italic;
+  color: darkblue;
 }
 
 .guess {
