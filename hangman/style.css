@@ -90,7 +90,7 @@ body {
   font-size: 2em;
 }
 
-.letter {
+.cell {
   width: 30px;
   border-bottom: 2px solid black;
   text-transform: uppercase;

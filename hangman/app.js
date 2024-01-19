@@ -59,7 +59,6 @@ guessesBox.appendChild(guessesCounter);
 
 const virtualKeyboard = document.createElement("div");
 virtualKeyboard.classList.add("keyboard");
-
 for (let i = 97; i <= 122; i++) {
   const button = document.createElement("button");
   button.classList.add("key-btn");
@@ -70,7 +69,6 @@ for (let i = 97; i <= 122; i++) {
     initGame(e.target, String.fromCharCode(i))
   );
 }
-
 quizPart.appendChild(virtualKeyboard);
 
 document.addEventListener("keypress", (e) => {
@@ -105,83 +103,84 @@ modalContent.appendChild(playBtn);
 
 /* GET WORD FROM LIST */
 
-const wordList = [
+const quiz = [
   {
-    word: "hangman",
-    hint: "The game you are currently playing.",
+    answer: "hangman",
+    question: "The game you are currently playing.",
   },
   {
-    word: "git",
-    hint: "Version control system.",
+    answer: "git",
+    question: "Version control system.",
   },
   {
-    word: "return",
-    hint: "JS operator terminates the current function and returns its value.",
+    answer: "return",
+    question:
+      "JS operator terminates the current function and returns its value.",
   },
   {
-    word: "checkout",
-    hint: "Git command is used to switch between branches or move the pointer to another existing commit.",
+    answer: "checkout",
+    question:
+      "Git command is used to switch between branches or move the pointer to another existing commit.",
   },
   {
-    word: "const",
-    hint: "Keyword is used in JavaScript to declare a variable.",
+    answer: "const",
+    question: "Keyword is used in JavaScript to declare a variable.",
   },
   {
-    word: "github",
-    hint: "Web service for hosting projects and their collaborative development, based on Git.",
+    answer: "github",
+    question:
+      "Web service for hosting projects and their collaborative development, based on Git.",
   },
   {
-    word: "while",
-    hint: "Keyword can you use to define a loop in JavaScript.",
+    answer: "while",
+    question: "Keyword can you use to define a loop in JavaScript.",
   },
   {
-    word: "show",
-    hint: "Git command outputs the changes made by a specific commit.",
+    answer: "show",
+    question: "Git command outputs the changes made by a specific commit.",
   },
   {
-    word: "aside",
-    hint: "HTML semantic element for the sidebar.",
+    answer: "aside",
+    question: "HTML semantic element for the sidebar.",
   },
   {
-    word: "clone",
-    hint: "Git command is used to create a copy of a remote repository.",
+    answer: "clone",
+    question: "Git command is used to create a copy of a remote repository.",
   },
   {
-    word: "head",
-    hint: "The name of the pointer to the current state in the branch.",
+    answer: "head",
+    question: "The name of the pointer to the current state in the branch.",
   },
   {
-    word: "margin",
-    hint: "CSS property creates extra space around an element.",
+    answer: "margin",
+    question: "CSS property creates extra space around an element.",
   },
 ];
 
-/* Get a random word */
-
-const getRandomWord = () => {
-  const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
-  console.log("Secret word is", word.toUpperCase());
-  hiddenWord = word;
-  document.querySelector(".hint-box").textContent = hint;
+function getQuiz() {
+  let { answer, question } = quiz[Math.floor(Math.random() * quiz.length)];
+  console.log("Secret word is", answer.toUpperCase());
+  hiddenWord = answer;
+  hintBox.textContent = question;
   startGame();
-};
+}
 
 /* VARIABLES */
 
-let hiddenWord;
+let hiddenWord = "";
 let guessLetters;
-let errors;
+let errors = 0;
 let maxErrors = 6;
 
 /* GAME FUNCTIONS */
 
-const initGame = (button, clickedBtn) => {
+function initGame(button, clickedBtn) {
   if (hiddenWord.includes(clickedBtn)) {
-    [...hiddenWord].forEach((letter, i) => {
-      if (letter === clickedBtn) {
-        guessLetters.push(letter);
-        secretWord.querySelectorAll(".letter")[i].textContent = letter;
-        secretWord.querySelectorAll(".letter")[i].classList.add("guess");
+    [...hiddenWord].forEach((l, i) => {
+      if (l === clickedBtn) {
+        guessLetters.push(l);
+        secretWord.getElementsByClassName("cell")[i].classList.add("guess");
+        secretWord.getElementsByClassName("cell")[i].textContent = l;
       }
     });
   } else {
@@ -194,23 +193,23 @@ const initGame = (button, clickedBtn) => {
 
   if (guessLetters.length === hiddenWord.length) return gameOver(true);
   if (errors === maxErrors) return gameOver(false);
-};
+}
 
 const startGame = () => {
   guessLetters = [];
   errors = 0;
-  hangmanImg.src = "./assets/images/hangman-0.svg";
+  hangmanImg.src = "./assets/images/gallows.svg";
   guessesCounter.textContent = `${errors} / ${maxErrors}`;
   secretWord.innerHTML = hiddenWord
     .split("")
-    .map(() => `<div class="letter"></div>`)
+    .map(() => `<div class="cell"></div>`)
     .join("");
   virtualKeyboard
     .querySelectorAll("button")
     .forEach((button) => (button.disabled = false));
 };
 
-const gameOver = (isWin) => {
+function gameOver(isWin) {
   modal.classList.add("modal-active");
   modalTitle.textContent = isWin
     ? "Congrats, you win!"
@@ -220,19 +219,19 @@ const gameOver = (isWin) => {
   virtualKeyboard
     .querySelectorAll("button")
     .forEach((button) => (button.disabled = true));
-};
+}
 
-getRandomWord();
+getQuiz();
 
 playBtn.addEventListener("click", () => {
-  getRandomWord();
+  getQuiz();
   modal.classList.remove("modal-active");
 });
 
 document.addEventListener("keydown", function (e) {
   if (modal.classList.contains("modal-active")) {
     if (e.key === "Enter" || e.key === " ") {
-      getRandomWord();
+      getQuiz();
       modal.classList.remove("modal-active");
     }
   }
